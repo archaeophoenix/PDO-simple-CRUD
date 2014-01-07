@@ -12,8 +12,4 @@
 </form>
 <?php if(!empty($datas)){
 	print_r($datas);
-<<<<<<< HEAD
 } ?>
-=======
-} ?>
->>>>>>> 5adf8e67bfe41412c97c343b994f05872d64fa78
