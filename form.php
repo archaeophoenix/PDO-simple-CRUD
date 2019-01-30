@@ -1,16 +1,25 @@
 <?php
 error_reporting(~E_NOTICE);
 require_once 'isi.php';
+
+/*deklarasi object dari class isi*/
 $f = new isi();
+
+/*checking kondisi submit*/
 if (isset($_POST['submit'])) {
+
+	/*jika $_POST['id'] kosong maka execute insert data*/
 	if (empty($_POST['id'])) {
 		$f->create('tabel');
+		/*jika $_POST['id'] ada maka execute update data*/
 	} else {
 		$f->update('tabel','id = :id');
 	}
+	/*direct kehalaman list.php*/
 	$f->redirect('list.php');
 }
 if (isset($_GET['id'])) {
+	/*pengambilan data detail*/
 	$data = $f->one('tabel',"WHERE id = '$_GET[id]'");
 }
 ?>

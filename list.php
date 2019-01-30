@@ -1,10 +1,15 @@
 <?php
 error_reporting(~E_NOTICE);
 require_once 'isi.php';
+/*deklarasi object dari class isi*/
 $f = new isi();
+/*execute query select*/
 $datas = $f->read('tabel');
+/*checking kondisi submit*/
 if (isset($_GET['delete'])) {
+	/*execute query delete*/
 	$data = $f->delete('tabel',"id = '$_GET[delete]'");
+	/*direct halaman ke list.php*/
 	$f->redirect('list.php');
 }
 ?>

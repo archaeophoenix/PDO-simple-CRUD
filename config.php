@@ -3,4 +3,3 @@
 	$connect['dbname'] = 'demo';
 	$connect['user'] = 'root';
 	$connect['password'] = '';
-?>
